@@ -2,8 +2,7 @@ package com.weckar.modExperiment;
 
 import static com.weckar.modExperiment.reference.ModRef.*;
 
-import com.weckar.modExperiment.init.ModBlocks;
-import com.weckar.modExperiment.init.ModItems;
+import com.weckar.modExperiment.init.*;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -23,7 +22,7 @@ public class modExperiment {
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
-
+		ModRecipes.init();
 	}
 
 	@Mod.EventHandler
