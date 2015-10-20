@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class ItemBase extends Item {
+public abstract class ItemBase extends Item {
 	private String name;
 	private String iconName;
 

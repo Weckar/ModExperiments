@@ -11,7 +11,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
-public class BlockBase extends Block {
+public abstract class BlockBase extends Block {
 	private String name;
 	private String [] iconName;
 	private IIcon [] icons;
