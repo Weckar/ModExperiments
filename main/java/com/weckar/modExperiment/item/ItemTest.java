@@ -4,7 +4,7 @@ public class ItemTest extends ItemBase {
 	public ItemTest() {
 		super();
 		this.setName("Test");
-		this.setIconName("test");
+		this.setIconName("test/test");
 	}
 
 }
