@@ -57,7 +57,7 @@ public abstract class BlockBase extends Block {
 	public IIcon getIcon(int side, int meta) {
 		return icons[side%icons.length];
 	}
-
+	
 	protected void setIconName(String... name) {
 		this.iconName = name;
 	}

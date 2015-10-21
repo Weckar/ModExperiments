@@ -21,13 +21,6 @@ public abstract class TEBase extends TileEntity implements IFluidTank, IInventor
 	private ItemStack [] inventory = new ItemStack[getSizeInventory()];
 	private FluidStack fluid;
 	
-	public TEBase(){
-		GameRegistry.registerTileEntity(this.getClass(), getName());
-		if (getRenderer()!=null){
-			ClientRegistry.bindTileEntitySpecialRenderer(this.getClass(), getRenderer());
-		}
-	}
-	
 	public abstract String getName();
 	public abstract TileEntitySpecialRenderer getRenderer();
 	@Override
