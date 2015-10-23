@@ -3,6 +3,7 @@ package com.weckar.modExperiment;
 import static com.weckar.modExperiment.reference.ModRef.*;
 
 import com.weckar.modExperiment.handler.EventHandler;
+import com.weckar.modExperiment.handler.WorldDataHandler;
 import com.weckar.modExperiment.init.*;
 
 import cpw.mods.fml.common.Mod;
@@ -30,6 +31,5 @@ public class modExperiment {
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-
 	}
 }

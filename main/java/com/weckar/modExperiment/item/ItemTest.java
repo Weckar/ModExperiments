@@ -1,6 +1,6 @@
 package com.weckar.modExperiment.item;
 
-public class ItemTest extends ItemBase {
+public class ItemTest extends ItemUniqueBase {
 	public ItemTest() {
 		super();
 		this.setName("Test");
