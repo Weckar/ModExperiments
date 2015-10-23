@@ -37,7 +37,8 @@ public abstract class ItemUniqueBase extends ItemBase {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity ent, int num,	boolean bool) {
 		//THERE CAN ONLY BE ONE
-		if (!world.isRemote && !itemStack.hasTagCompound()){
+		if (!world.isRemote && (!itemStack.hasTagCompound() || itemStack.getTagCompound().getBoolean("Unique")==false)){
+			LogHelper.info("Registering Unique "+itemStack.getItem().getUnlocalizedName());
 			if(!UniqueItemHandler.getInstance().checkUnique(itemStack,true)){
 				if (ent instanceof EntityPlayer){
 					EntityPlayer player = (EntityPlayer)ent;

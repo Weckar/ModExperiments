@@ -73,4 +73,10 @@ public class UniqueItemHandler extends WorldSavedData {
 		INSTANCE.markDirty();
 		INSTANCE = null;
 	}
+
+	public void deleteUnique(ItemStack item){
+		markDirty();
+		itemUnique.remove(item);
+		item.getTagCompound().removeTag("Unique");
+	}
 }
