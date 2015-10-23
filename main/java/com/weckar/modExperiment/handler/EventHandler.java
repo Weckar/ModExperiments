@@ -18,19 +18,19 @@ public class EventHandler {
 		FMLCommonHandler.instance().bus().register(this);
 	}
 	
-	//Events powering WorldDataHandler
+	//Events powering UniqueItemHandler
 	private World savedWorld;
 	@SubscribeEvent(priority = EventPriority.NORMAL)
     public void onWorldLoad(WorldEvent.Load e) {
-		if (!e.world.isRemote && WorldDataHandler.getInstance()==null){
+		if (!e.world.isRemote && UniqueItemHandler.getInstance()==null){
 			savedWorld=e.world;
-			WorldDataHandler.setInstance(e.world);
+			UniqueItemHandler.setInstance(e.world);
 		}
     }
 	@SubscribeEvent(priority = EventPriority.NORMAL)
     public void onWorldUnload(WorldEvent.Unload e) {
 		if (!e.world.isRemote && e.world.equals(savedWorld)){
-			WorldDataHandler.resetInstance();
+			UniqueItemHandler.resetInstance();
 		}
     }
 }

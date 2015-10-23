@@ -1,5 +1,8 @@
 package com.weckar.modExperiment.init;
 
+import com.weckar.modExperiment.recipe.UniqueShapedRecipe;
+import com.weckar.modExperiment.recipe.UniqueShapelessRecipe;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -7,7 +10,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemCarrotOnAStick;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 public class ModRecipes {
@@ -26,7 +28,7 @@ public class ModRecipes {
 		if (objects[0] instanceof ItemStack) output = (ItemStack)objects[0];
 		else if (objects[0] instanceof Item) output = new ItemStack((Item)objects[0]);
 		else output = new ItemStack((Block)objects[0]);
-		GameRegistry.addRecipe(new ShapedOreRecipe(output, ingredients));
+		GameRegistry.addRecipe(new UniqueShapedRecipe(output, ingredients));
 	}
 	private static void addShapeless(Object...objects){
 		int count = 0;
@@ -49,6 +51,6 @@ public class ModRecipes {
 		if (objects[0] instanceof ItemStack) output = (ItemStack)objects[0];
 		else if (objects[0] instanceof Item) output = new ItemStack((Item)objects[0]);
 		else output = new ItemStack((Block)objects[0]);
-		GameRegistry.addRecipe(new ShapelessOreRecipe(output,ingredients));
+		GameRegistry.addRecipe(new UniqueShapelessRecipe(output,ingredients));
 	}
 }
