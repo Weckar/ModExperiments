@@ -10,20 +10,26 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
+import net.minecraftforge.fluids.BlockFluidClassic;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 
-public abstract class BlockBase extends Block{
+public abstract class FluidBase extends BlockFluidClassic{
 	private String name;
 	private String [] iconName;
 	private IIcon [] icons;
 
-	public BlockBase(Material material) {
-		super(material);
+	public FluidBase(Fluid fluid, Material material) {
+		super(fluid, material);
 		this.setCreativeTab(CreativeTab.TAB);
 	}
 
-	public BlockBase() {
-		this(Material.rock);
+	public FluidBase(Fluid fluid) {
+		this(fluid,Material.water);
 	}
+	
+	public static FluidBase init(){ return null;}
 
 	@Override
 	public String getUnlocalizedName() {
@@ -45,7 +51,7 @@ public abstract class BlockBase extends Block{
 	}
 
 	protected void setName(String name) {
-		this.name = "B" + name;
+		this.name = "F" + name;
 		this.setBlockName(this.name);
 	}
 
@@ -61,4 +67,16 @@ public abstract class BlockBase extends Block{
 	protected void setIconName(String... name) {
 		this.iconName = name;
 	}
+
+    @Override
+    public boolean canDisplace(IBlockAccess world, int x, int y, int z) {
+            if (world.getBlock(x,  y,  z).getMaterial().isLiquid()) return false;
+            return super.canDisplace(world, x, y, z);
+    }
+    
+    @Override
+    public boolean displaceIfPossible(World world, int x, int y, int z) {
+            if (world.getBlock(x,  y,  z).getMaterial().isLiquid()) return false;
+            return super.displaceIfPossible(world, x, y, z);
+    }
 }

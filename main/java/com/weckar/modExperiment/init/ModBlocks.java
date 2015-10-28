@@ -14,6 +14,7 @@ public class ModBlocks {
 	public static final BlockBase mournSand = register(BlockMournSand.class);
 	////
 	public static void init() {
+		ModFluids.init();
 		for (BlockBase block : preReg) {
 			GameRegistry.registerBlock(block, block.getName());
 		}
