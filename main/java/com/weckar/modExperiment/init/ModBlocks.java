@@ -11,6 +11,7 @@ public class ModBlocks {
 	private static HashSet<BlockBase> preReg = new HashSet<BlockBase>();
 	//Blocks go here
 	public static final BlockBase test = register(BlockTest.class);
+	public static final BlockBase mournSand = register(BlockMournSand.class);
 	////
 	public static void init() {
 		for (BlockBase block : preReg) {

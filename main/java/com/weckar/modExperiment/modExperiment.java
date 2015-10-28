@@ -27,6 +27,7 @@ public class modExperiment {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		ModRecipes.init();
+		ModBiomes.init();
 	}
 
 	@Mod.EventHandler
